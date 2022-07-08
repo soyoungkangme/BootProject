@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fastcampus.domain.Users;
+import com.fastcampus.domain.User;
 import com.fastcampus.service.UserService;
 
 @Controller
@@ -27,8 +27,8 @@ public class LoginController {
 	// 로그인 처리 
 	// 로그인 인증 처리
 		@PostMapping("/auth/login")
-		public @ResponseBody String login(@RequestBody Users user, HttpSession session) {    // 프론트에서 JSON으로 받은 데이터 자바 객체로 받음 
-			Users findUser = userService.getUser(user.getUsername());
+		public @ResponseBody String login(@RequestBody User user, HttpSession session) {    // 프론트에서 JSON으로 받은 데이터 자바 객체로 받음 
+			User findUser = userService.getUser(user.getUsername());
 			
 			if(findUser.getUsername() == null) {    // 아이디 검증 
 				return "아이디가 존재하지 않아요.";

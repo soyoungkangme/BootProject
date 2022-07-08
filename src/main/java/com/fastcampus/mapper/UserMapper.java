@@ -8,24 +8,28 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.fastcampus.domain.Users;
+import com.fastcampus.domain.User;
+
+
+//mapper.xml 설정 대신하는 인터페이스 (구현클래스는 스프링부트가 자동 생성)
+
 
 @Mapper
-public interface UserMapper {    // mapper.xml 설정 대신하는 클래스 (구현클래스는 스프링부트가 만들어줌)
+public interface UserMapper {    
 	
-	@Insert("INSERT INTO USERS(ID, USERNAME, PASSWORD, EMAIL) VALUES((SELECT NVL(MAX(ID), 0) + 1 FROM USER), #{username}, #{password}, #{email})")
-	public void insertUser(Users user);
+	@Insert("INSERT INTO USERS(ID, USERNAME, PASSWORD, EMAIL) VALUES((SELECT NVL(MAX(ID), 0) + 1 FROM USERS), #{username}, #{password}, #{email})")
+	public void insertUser(User user);    // MyBatis에서는 어노테이션의 아이디로 SQL 사용했지만 스프링부트는 메서드 이름으로 사용 
 	
 	@Update("UPDATE USERS PASSWORD = #{password}, EMAIL = #{email} WHERE ID = #{id}")
-	public void updateUser(Users user);
+	public void updateUser(User user);
 	
 	@Delete("DELETE USERS WHERE ID = #{id}")
-	public void deleteUser(Users user);
+	public void deleteUser(User user);
 	
 	@Select("SELECT * FROM USERS WHERE USERNAME = #{username}")
-	public Users getUser(Users user);
+	public User getUser(User user);
 
 	@Select("SELECT * FROM USERS ORDER BY USERNAME DESC")
-	public List<Users> getUserList();
+	public List<User> getUserList();
 
 }
