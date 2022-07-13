@@ -2,6 +2,13 @@
 
 <%@ include file="../layout/header.jsp"%>
 
+
+<%-- 
+회원가입 화면 
+w3shools.com 
+--%>
+
+
 <br>
 <div class="container-fluid mt-3">
 	<form>
@@ -23,6 +30,6 @@
 
 </div>
 
-<script src="/js/user.js"></script>    <!-- init() -->
+<script src="/js/user.js"></script>    <%-- JS 파일 등록하면 JSP가 브라우저에 로딩되는 순간 JS 파일 로딩, init() 실행 --%>
 
 <%@ include file="../layout/footer.jsp"%>

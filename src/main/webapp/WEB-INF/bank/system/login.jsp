@@ -19,6 +19,6 @@
 	<button id="btn-login" class="btn btn-secondary">로그인</button>
 </div>
 
-<script src="/js/login.js"></script>    <!-- 버튼이 눌렸을때 init() 실행되도록 -->
+<script src="/js/login.js"></script>    <%-- 버튼이 눌렸을때 init() 실행되도록 --%>
 
 <%@ include file="../layout/footer.jsp"%>

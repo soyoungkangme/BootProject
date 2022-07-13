@@ -1,12 +1,14 @@
 package com.fastcampus.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;    // javax.persistence = JPA 
 
 import org.hibernate.annotations.CreationTimestamp;    // 얘만 JPA 아니고 hibernate가 제공 
@@ -66,6 +68,9 @@ public class User {
 	    
 	    @CreationTimestamp    // 현재 시간 정보 자동 세팅 
 	    private Timestamp createDate;
+	    
+//	    @OneToMany
+//	    private List<Post> postList = new ArrayList<Post()>:
 	}
 
 

@@ -2,6 +2,8 @@
 // 프론트가 만듦
 
 
+// 사용안함
+
 
 let loginObject = {
 	

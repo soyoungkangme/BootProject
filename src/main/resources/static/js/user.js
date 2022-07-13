@@ -1,36 +1,32 @@
-// new file
-// 프론트가 만듦
+// new file (프론트가 만듦)
+// insertUser.jsp 와 연결됨  
 
 
 
-// userObject 객체 선언 
-let userObject = {
+let userObject = {    // userObject 객체 선언 
 
-	// init() 함수 선언 
-	init: function() {
+	init: function() {    // init() 함수 선언 
 		let _this = this;
 		
-		// "#btn-save" 버튼에 "click" 이벤트가 발생하면 insertUser() 함수를 호출한다. 
-		$("#btn-insert").on("click", () => {
-			_this.insertUser();
+		$("#btn-insert").on("click", () => {    // btn-insert 버튼 클릭되는 순간 (insertUser.jsp))
+			_this.insertUser();    // 객체 안에 insertUser() 호출 
 		});
 	},
 	
 	insertUser: function() {
-		alert("회원 가입 요청됨");
+		alert("회원 가입 요청됨");    // alert = 팝업 
 		
-		// 사용자 입력값 추출하여 객체에 세팅 
-		let user = {
+		let user = {    // 사용자 입력값 추출하여 객체에 세팅 (<input>의 id)
 			username : $("#username").val(),
 			password : $("#password").val(),
 			email : $("#email").val()
 		}		
 
-		// Ajax를 이용한 비동기 호출 (포스트맨 테스트와 동일)
+		// Ajax 이용하여 서버에 비동기 요청 (포스트맨 설정과 동일)
 		$.ajax({
-			type: "POST", // 등록 (서버 요청 방)
-			url: "/auth/insertUser", // 요청 path
-			data: JSON.stringify(user), // user Object를 JSON으로 변환
+			type: "POST", // = 등록
+			url: "/auth/insertUser",    // Controller
+			data: JSON.stringify(user), // user 객체를 JSON으로 변환
 			// HTTP 바디에 설정되는 데이터의 마임타입설정 
 			contentType: "application/json; charset=utf-8"    // JSON 받아서 insert 처리 (백엔드)
 			// done() : 요청 처리에 성공했을 때 실행될 코드를 작성한다.
@@ -44,5 +40,5 @@ let userObject = {
 	},
 }
  
-// userObject 객체의 init() 함수 호출. 
-userObject.init();
+ 
+userObject.init();    // 무조건 실행되는 메서드 

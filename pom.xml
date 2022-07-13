@@ -80,20 +80,38 @@
 		</dependency>
 		
 		
-		<!-- Bootstrap 라이브러리 (자바스크립트) -->
+		<!-- Bootstrap 라이브러리 (자바스크립트, CSS) -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
 			<version>5.1.3</version>
 		</dependency>
 
-		<!-- jQuery 라이브러리 -->
+		<!-- jQuery 라이브러리 (자바스크립트, CSS) -->
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>jquery</artifactId>
 			<version>3.6.0</version>
 		</dependency>
 		
+		<!-- Summernote 라이브러리 -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>summernote</artifactId>
+			<version>0.8.10</version>
+		</dependency>
+		
+		<!-- 시큐리티는 add starter로 추가 
+		메모리에 계정 비밀본호 생김(콘솔) -> 복사,  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		
 	</dependencies>
 
