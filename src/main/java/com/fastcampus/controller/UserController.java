@@ -130,6 +130,12 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	// 로그인 화면으로 이동
+	@GetMapping("/auth/login") 
+	public String login() {
+		return "system/login";
+	}
+	
 	// 회원가입 화면으로 이동 
 	@GetMapping("/auth/insertUser")    // header.jsp 
 	public String insertUser() {
@@ -141,14 +147,15 @@ public class UserController {
 	@PostMapping("/auth/insertUser")
 	public @ResponseBody String insertUser(@RequestBody User user) {    // JSP 아닌 문자열 그대로 리턴 (요청한곳으로 = user.js)
 		
-		// username으로 등록된 회원 있나 검색
-		User findUser = userService.getUser(user.getUsername());
-		if (findUser == )
-		
-		user.setRole("USER");
-		user.setCreateDate(new Timestamp(System.currentTimeMillis()));
-		userService.insertUser(user);
-		return user.getUsername() + " 회원 가입 성공";
+		// id 중복 체크
+		User findUser = userService.getUser(user.getUsername());    // 검색 
+		if(findUser.getUsername() == null) {
+			user.setRole("USER");
+			userService.insertUser(user);    // 신규 가입 
+			return user.getUsername() + " 회원 가입 성공";    // JSP 아닌 문자열 그대로 리턴 (@ResponseBody) 
+		} else {
+			return user.getUsername() + " 아이디는 이미 존재합니다";
+		}
 	}
 	
 }

@@ -69,7 +69,7 @@ public class User {
 	    @CreationTimestamp    // 현재 시간 정보 자동 세팅 
 	    private Timestamp createDate;
 	    
-//	    @OneToMany
+//	    @OneToMany    // 한명의 회원이 등록한 포스트 목록 조회 (조인에서 양방향 매핑)
 //	    private List<Post> postList = new ArrayList<Post()>:
 	}
 

@@ -2,6 +2,7 @@
 
 <%@ include file="../layout/header.jsp"%>
 
+
 <div class="container mt-3">
 <form>
 <div class="mb-3">
@@ -18,7 +19,7 @@
 </div>
 
 
-<script>
+<script>    <!-- 자바스크립트 (summernote = 텍스트 편집기) -->
 $(document).ready(function () {
     $("#content").summernote({
         height: 300

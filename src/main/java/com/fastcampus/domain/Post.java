@@ -18,11 +18,11 @@ import org.hibernate.annotations.CreationTimestamp;    // 얘만 JPA 아니고 h
 import lombok.Data;
 
 
-// VO와 동일 
+// 
 
 
 @Data
-@Entity    // 테이블과 매핑되는 클래스임을 선언 
+@Entity  
 public class Post {
 	
 	    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
