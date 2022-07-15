@@ -17,7 +17,7 @@ import com.fastcampus.domain.User;
 
 public class AuthenticateInterceptor implements HandlerInterceptor {
 	
-	// 로그인 검증 
+	// 로그인 인증 
 	@Override    
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)    // Controller 실행 전 동작 
 			throws Exception {

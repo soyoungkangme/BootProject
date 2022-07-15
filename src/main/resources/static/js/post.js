@@ -1,6 +1,7 @@
 // new file (프론트가 만듦)
 
 
+// 포스트 등록 
 let postObject = {
 
 	init: function() {

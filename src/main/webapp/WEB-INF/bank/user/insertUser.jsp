@@ -24,6 +24,7 @@ w3shools.com
 			<label for="email">Email:</label> 
 			<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
 		</div>
+		
 	</form>
 
 	<button id="btn-insert" class="btn btn-secondary">회원가입</button>

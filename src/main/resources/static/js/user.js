@@ -9,6 +9,7 @@ let userObject = {    // userObject 객체 선언
 	init: function() {    // init() 함수 선언 
 		let _this = this;
 
+        
 		$("#btn-insert").on("click", () => {    // btn-insert 버튼 클릭되는 순간 (insertUser.jsp)
 			_this.insertUser();    // 객체 안에 insertUser() 호출 
 		});
@@ -39,4 +40,5 @@ let userObject = {    // userObject 객체 선언
 
 
 userObject.init();    // 무조건 실행되는 메서드 
+
 

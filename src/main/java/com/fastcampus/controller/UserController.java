@@ -130,7 +130,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	// 로그인 화면으로 이동
+	// 로그인 화면으로 이동 (LoginController에서 가져옴) 
 	@GetMapping("/auth/login") 
 	public String login() {
 		return "system/login";
