@@ -1,11 +1,10 @@
 package com.fastcampus.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fastcampus.domain.Post;
 import com.fastcampus.domain.User;
+import com.fastcampus.security.jpa.UserDetailsImpl;
 import com.fastcampus.service.PostService;
 
 
@@ -46,11 +46,14 @@ public class PostController {
 	
 	// 포스트 등록 
 	@PostMapping("/post/insertPost")
-	public @ResponseBody String insertPost(@RequestBody Post post, HttpSession session) {
+	public @ResponseBody String insertPost(@RequestBody Post post, 
+			                               // HttpSession session
+			                               @AuthenticationPrincipal UserDetailsImpl userDetails) {   
 		
 		// 로그인 성공시 저장한 User 객체 정보를 post에 세팅해야 POST의 FK(USER_ID) 컬럼에 USER의 ID(PK = 일련번호) 등록됨 *****
-		User principal = (User) session.getAttribute("principal");
-		post.setUser(principal);
+		// User principal = (User) session.getAttribute("principal");
+		User principal = (User) userDetails.getUser();
+		post.setUser(principal);    // 포스트 등록될때 유저 아이디 세팅 
 		
 		postService.insertPost(post);		
 		return "새로운 1:1 문의를 등록했습니다.";

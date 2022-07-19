@@ -70,7 +70,7 @@ public class User {
 	    private Timestamp createDate;
 	    
 //	    @OneToMany    // 한명의 회원이 등록한 포스트 목록 조회 (조인에서 양방향 매핑)
-//	    private List<Post> postList = new ArrayList<Post()>:
+//	    private List<Post> postList = new ArrayList<Post()>;
 	}
 
 

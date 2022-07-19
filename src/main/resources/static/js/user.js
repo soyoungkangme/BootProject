@@ -3,7 +3,7 @@
 
 
 
-// 회원가입 
+ 
 let userObject = {    // userObject 객체 선언 
 
 	init: function() {    // init() 함수 선언 
